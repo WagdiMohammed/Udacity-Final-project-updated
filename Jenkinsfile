@@ -19,7 +19,8 @@ pipeline {
               steps {
                   
                   sh '''
-                  
+                         aws configure set aws_access_key_id AKIAIYSLUQ4IO6A55UUQ
+                         aws configure set aws_secret_access_key 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
                         
                          aws cloudformation create-stack --stack-name udacityfinalproject-infra  --template-body  file://infra.yml   --region us-west-2  --parameters file://infra-paramas.json
                          sleep 10m
