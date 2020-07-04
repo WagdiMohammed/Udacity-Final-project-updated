@@ -16,7 +16,10 @@ pipeline {
               steps {
                   sh 'tidy -q -e *.html'
               }
-     stage('Create CloudFormation Stacks')
+    
+          }
+          
+      stage('Create CloudFormation Stacks')
           {
                step {
                     sh '''
@@ -25,8 +28,7 @@ pipeline {
                       
                       
                       '''
-               }
-          }
+               }    
               
          }
      }
