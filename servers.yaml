@@ -47,13 +47,13 @@ Resources:
     Properties:
       UserData:
         Fn::Base64: !Sub |
-              #!/bin/bash
-              sudo apt-get -y update
-	      sudo apt-get -y install git
-	      sudo apt-get -y install docker.io
-	      sudo usermod -aG docker ubuntu
-              docker pull   wagdy/udacityfinal:nginxudacity 
-	      docker run -d -p 80:80 wagdy/udacityfinal:nginxudacity 
+          #!/bin/bash
+          sudo apt-get -y update
+          sudo apt-get -y install git
+          sudo apt-get -y install docker.io
+          sudo usermod -aG docker ubuntu
+          docker pull   wagdy/udacityfinal:nginxudacity 
+          docker run -d -p 80:80 wagdy/udacityfinal:nginxudacity 
               
       ImageId: ami-0d1cd67c26f5fca19
       SecurityGroups:
