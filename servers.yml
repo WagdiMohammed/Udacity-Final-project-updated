@@ -48,15 +48,16 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
               #!/bin/bash
-              sudo apt-get update -y
-              sudo apt-get install -y  apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-              sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-              sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-              sudo apt-get install -y  docker-ce docker-ce-cli containerd.io
-              sudo docker run --name nginx-test    -p 80:80  wagdy/udacityfinal:nginxudacity &
+              sudo apt-get -y update
+              sudo apt-get -y install git
+              sudo apt-get -y install docker.io
+              sudo usermod -aG docker ubuntu
+              sudo docker pull  wagdy/udacityfinal:nginxudacity 
+              sudo docker run -d -p 80:80   wagdy/udacityfinal:nginxudacity 
               sudo curl -sfL https://get.k3s.io | sh -
               sudo k3s kubectl run --generator=run-pod/v1 nginx --image=wagdy/udacityfinal:nginxudacity
-              
+              sudo POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+              sudo k3s kubectl port-forward $POD_NAME 80:80
       ImageId: ami-0d1cd67c26f5fca19
       SecurityGroups:
         - Ref: WebServerSecGroup
