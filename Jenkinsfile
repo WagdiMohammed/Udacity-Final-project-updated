@@ -23,7 +23,7 @@ pipeline {
                         
                          aws cloudformation create-stack --stack-name udacityfinalproject-infra  --template-body  file://infra.yml   --region us-west-2  --parameters file://infra-paramas.json
                          sleep 5m
-                         aws cloudformation create-stack --stack-name udacityfinalproject --template-body  file://servers.yml   --region us-west-2  --parameters file://servers-paramas.json
+                         aws cloudformation create-stack --stack-name udacityfinalproject --template-body  file://servers.yaml   --region us-west-2  --parameters file://servers-paramas.json
                       
                       
                       '''
