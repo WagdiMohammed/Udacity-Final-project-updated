@@ -53,8 +53,8 @@ Resources:
               sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
               sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
               sudo apt-get install -y  docker-ce docker-ce-cli containerd.io
-              sudo curl -sfL https://get.k3s.io | sh -
               sudo docker run --name nginx-test    -p 80:80  wagdy/udacityfinal:nginxudacity &
+              sudo curl -sfL https://get.k3s.io | sh -
               sudo k3s kubectl run --generator=run-pod/v1 nginx --image=wagdy/udacityfinal:nginxudacity
               
       ImageId: ami-0d1cd67c26f5fca19
