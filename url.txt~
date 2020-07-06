@@ -1,4 +1,3 @@
-output URL
 http://udaci-webap-1e6y58xhc7zlq-37778411.us-west-2.elb.amazonaws.com/
 
 
@@ -6,8 +5,3 @@ http://udaci-webap-1e6y58xhc7zlq-37778411.us-west-2.elb.amazonaws.com/
 
 GitHub URL 
 https://github.com/WagdiMohammed/Udacity-Final-project-updated
-
-
-Docker Hub URL 
-https://hub.docker.com/repository/docker/wagdy/udacityfinal
-
